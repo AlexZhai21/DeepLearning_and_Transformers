@@ -1,14 +1,10 @@
 import torch
 import torch.nn as nn
 from torch.nn import functional as F
-
-
 n_embd = 768
 img_size = 28
 patch_size = 4
 in_channels = 1
-
-
 class PatchEmbed(nn.Module):
     def __init__(self, img_size, patch_size, in_channels, n_embd):
         super().__init__()

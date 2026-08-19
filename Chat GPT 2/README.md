@@ -44,13 +44,13 @@ When predicting cat, we mask that row so "the" can only attend to itself, for "t
 ## The math
 
 $$
-Q, K, V \in \mathbb{R}^{T \times \frac{C}{\text{num\_heads}}}
+Q, K, V \in \mathbb{R}^{T \times \frac{C}{\text{num heads}}}
 $$
 
 Attention Calculation:
 
 $$
-A = \frac{QK^T}{\sqrt{\text{head\_size}}}
+A = \frac{QK^T}{\sqrt{\text{head size}}}
 $$
 
 $$
@@ -58,11 +58,11 @@ A \in \mathbb{R}^{T \times T}
 $$
 
 $$
-\text{Attention}(Q, K, V) = \text{Softmax}\left(\frac{QK^T}{\sqrt{\text{head\_size}}}\right)V
+\text{Attention}(Q, K, V) = \text{Softmax}\left(\frac{QK^T}{\sqrt{\text{head size}}}\right)V
 $$
 
 $$
-\text{Attention}(Q, K, V) \in \mathbb{R}^{T \times \frac{C}{\text{num\_heads}}}
+\text{Attention}(Q, K, V) \in \mathbb{R}^{T \times \frac{C}{\text{num heads}}}
 $$
 
 Finally, we concat all these individual heads together, resulting in a `T x C` output, and then mix their results together using a projection matrix.
