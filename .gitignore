@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs and generated training artifacts
+*.log
+outputs/
+checkpoints/
+runs/
+wandb/
+
+# Large model artifacts
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Downloaded datasets
+Vision Transformer Recreation/visiontransformer_data/
+Chat GPT 2/data/
+Chat GPT 2/data/fineweb*/
+Chat GPT 2/data/**/train.bin
+Chat GPT 2/data/**/val.bin
