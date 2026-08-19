@@ -58,8 +58,6 @@ if torch.cuda.is_available():
     torch.cuda.manual_seed(42)
 
 print(f"Loaded fine-tuned checkpoint from {checkpoint_path}")
-print(f"Chatting with your fine-tuned GPT-2 model on {device}. Type 'quit' or 'exit' to stop.\n")
-
 while True:
     user_input = input("You: ").strip()
     if user_input.lower() in {"quit", "exit"}:
