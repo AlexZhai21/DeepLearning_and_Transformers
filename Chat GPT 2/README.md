@@ -116,10 +116,7 @@ In `models.py`, the `CausalSelfAttention` class uses PyTorch's scaled dot-produc
 ```python
 y = F.scaled_dot_product_attention(q, k, v, is_causal=True)
 ```
-
-This gives PyTorch the chance to use optimized attention kernels, including Flash Attention when the hardware and backend support it. Flash Attention is a more memory-efficient way to compute attention because it avoids materializing the full `T x T` attention matrix in GPU memory.
-
-From the model's point of view, the math is still the same attention operation. The difference is in how efficiently that operation is executed.
+Flash Attention allows us perform attention computation much faster by avoiding creating the T x T attention matrix.
 
 ## Learning Rate Scheduler
 
@@ -129,4 +126,4 @@ In `trainer.py`, the `get_lr` function controls the learning rate over time. At 
 
 After warmup, the learning rate follows a cosine decay curve down to `min_lr`, which is set to 10% of the maximum learning rate.
 
-This gives training a gentler start, then slowly reduces the step size as the model gets closer to convergence.
+This gives training a gentler start, when the random initial weights are shaky and probably inaccurate, then slowly reduces the step size as the model gets closer to convergence.
